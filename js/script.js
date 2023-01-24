@@ -930,77 +930,77 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // 1st try.
-    // class MenuCard {
-    //     constructor(src, alt, title, descr, price, parentSelector) {
-    //         this.src = src;
-    //         this.alt = alt;
-    //         this.title = title;
-    //         this.descr = descr;
-    //         this.price = price;
-    //         this.parent = document.querySelector(parentSelector);
-    //         this.som = 11303;
-    //         this.transfer();
-    //     }
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSelector) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.parent = document.querySelector(parentSelector);
+            this.som = 11303;
+            this.transfer();
+        }
 
-    //     // $ to UZS.
-    //     transfer() {
-    //         this.price = this.price * this.som;
-    //     }
+        // $ to UZS.
+        transfer() {
+            this.price = this.price * this.som;
+        }
 
-    //     pass() {
-    //         const element = document.createElement('div');
-    //         element.innerHTML = `
-    //         <div class="menu__item">
-    //             <img src=${this.src} alt=${this.alt} />
-    //             <h3 class="menu__item-subtitle">${this.title}</h3>
-    //             <div class="menu__item-descr">
-    //                 ${this.descr}
-    //             </div>
-    //             <div class="menu__item-divider"></div>
-    //             <div class="menu__item-price">
-    //                 <div class="menu__item-cost">Price:</div>
-    //                 <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
-    //             </div>        
-    //         </div>
-    //         `;
+        pass() {
+            const element = document.createElement('div');
+            element.innerHTML = `
+            <div class="menu__item">
+                <img src=${this.src} alt=${this.alt} />
+                <h3 class="menu__item-subtitle">${this.title}</h3>
+                <div class="menu__item-descr">
+                    ${this.descr}
+                </div>
+                <div class="menu__item-divider"></div>
+                <div class="menu__item-price">
+                    <div class="menu__item-cost">Price:</div>
+                    <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
+                </div>        
+            </div>
+            `;
 
-    //         this.parent.append(element);
-    //     }
-    // }
+            this.parent.append(element);
+        }
+    }
 
 
-    // new MenuCard(
-    //     "img/tabs/1.png",
-    //     "vegy",
-    //     `Plan "Usual"`,
-    //     `
-    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
-    //     `,
-    //     10,
-    //     `.menu .container`
-    // ).pass();
+    new MenuCard(
+        "img/tabs/1.png",
+        "vegy",
+        `Plan "Usual"`,
+        `
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+        `,
+        10,
+        `.menu .container`
+    ).pass();
 
-    // new MenuCard(
-    //     "img/tabs/2.jpg",
-    //     "elite",
-    //     `Plan "Premium"`,
-    //     `
-    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
-    //     `,
-    //     15,
-    //     `.menu .container`
-    // ).pass();
+    new MenuCard(
+        "img/tabs/2.jpg",
+        "elite",
+        `Plan "Premium"`,
+        `
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+        `,
+        15,
+        `.menu .container`
+    ).pass();
 
-    // new MenuCard(
-    //     "img/tabs/3.jpg",
-    //     "post",
-    //     `Plan "VIP"`,
-    //     `
-    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
-    //     `,
-    //     20,
-    //     `.menu .container`
-    // ).pass();
+    new MenuCard(
+        "img/tabs/3.jpg",
+        "post",
+        `Plan "VIP"`,
+        `
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+        `,
+        20,
+        `.menu .container`
+    ).pass();
 
 
 
@@ -1497,6 +1497,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    fetch('db.json')
+        .then((data) => data.json())
+        .then((res) => console.log(res))
+
+
+
 
 
 
@@ -1504,15 +1510,15 @@ window.addEventListener('DOMContentLoaded', () => {
     // bu aslida XAMMP ni zamena qilib turuvchisi
     // Fetch API - XMLHttpRequest dan ko'ra ancha qulayroq.
 
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name: 'aziz' })
-        })
-        .then(response => response.json())
-        .then(json => console.log(json));
+    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ name: 'aziz' })
+    //     })
+    //     .then(response => response.json())
+    //     .then(json => console.log(json));
 
     // output:
     // { name: 'aziz', id: 101 }
