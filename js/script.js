@@ -191,16 +191,60 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // 4th try.
-    const tabHeader = document.querySelector('.tabheader'),
-        tabItems = document.querySelectorAll('.tabheader__item'),
-        tabContents = document.querySelectorAll('.tabcontent');
+    // const tabHeader = document.querySelector('.tabheader'),
+    //     tabItems = document.querySelectorAll('.tabheader__item'),
+    //     tabContents = document.querySelectorAll('.tabcontent');
 
 
-    // birinchi kontentni yoqatadigan funksiya yozamiz.
+    // // birinchi kontentni yoqatadigan funksiya yozamiz.
+    // function hideContent() {
+    //     tabContents.forEach((item) => {
+    //         item.classList.add('hide');
+    //         item.classList.remove('show');
+    //     });
+
+    //     tabItems.forEach((item) => {
+    //         item.classList.remove('tabheader__item_active');
+    //     });
+    // }
+
+    // hideContent();
+
+    // // ikkinchi uni aniq qaysi birinidur ko'rsatadigan funksiya yozamiz.
+    // function showContent(i = 0) {
+    //     tabContents[i].classList.add('show');
+    //     tabContents[i].classList.remove('hide');
+    //     tabItems[i].classList.add('tabheader__item_active');
+    // }
+
+    // showContent();
+
+
+    // // umumiy hammasini ishlaydigan qilamiz endi.
+    // tabHeader.addEventListener('click', (event) => {
+    //     const target = event.target;
+
+    //     if (target && target.classList.contains('tabheader__item')) {
+    //         tabItems.forEach((item, i) => {
+    //             if (item == target) {
+    //                 hideContent();
+    //                 showContent(i);
+    //             }
+    //         });
+    //     }
+    // });
+
+
+    // 5th try.
+    const wrapperTab = document.querySelector('.tabheader');
+    const tabItems = document.querySelectorAll('.tabheader__item');
+    const tabContents = document.querySelectorAll('.tabcontent');
+
+
     function hideContent() {
-        tabContents.forEach((item) => {
-            item.classList.add('hide');
-            item.classList.remove('show');
+        tabContents.forEach((content) => {
+            content.classList.add('hide');
+            content.classList.remove('show');
         });
 
         tabItems.forEach((item) => {
@@ -210,30 +254,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
     hideContent();
 
-    // ikkinchi uni aniq qaysi birinidur ko'rsatadigan funksiya yozamiz.
-    function showContent(i = 0) {
+
+
+    function showConent(i = 0) {
         tabContents[i].classList.add('show');
         tabContents[i].classList.remove('hide');
         tabItems[i].classList.add('tabheader__item_active');
     }
 
-    showContent();
+    showConent();
 
 
-    // umumiy hammasini ishlaydigan qilamiz endi.
-    tabHeader.addEventListener('click', (event) => {
-        const target = event.target;
-
-        if (target && target.classList.contains('tabheader__item')) {
+    wrapperTab.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('tabheader__item')) {
             tabItems.forEach((item, i) => {
-                if (item == target) {
+                if (item == event.target) {
                     hideContent();
-                    showContent(i);
+                    showConent(i);
                 }
             });
         }
-    });
 
+    });
 
 
 
@@ -285,6 +327,24 @@ window.addEventListener('DOMContentLoaded', () => {
     setLoader();
 
 
+    // 3rd try.
+    // const loader = document.querySelector('.loader');
+
+    // function loadLoader() {
+    //     setTimeout(() => {
+    //         // loader.style.opacity = '0';
+    //         loader.classList.add('opacity');
+
+
+    //         setTimeout(() => {
+    //             // loader.style.display = 'none';
+    //             loader.classList.add('display');
+    //         }, 500);
+    //     }, 3000);
+    // }
+
+    // loadLoader();
+
 
 
 
@@ -292,36 +352,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // Timer.
-    // const deadline = '2023-07-11';
+    // const deadline = '2023-05-20';
 
+    // // 1st part.
     // function getTimeRemaining(endtime) {
-    //     const timer = Date.parse(endtime) - Date.parse(new Date()),
-    //         days = Math.floor(timer / (1000 * 60 * 60 * 24)),
-    //         hours = Math.floor((timer / (1000 * 60 * 60)) % 24),
-    //         minutes = Math.floor((timer / 1000 / 60) % 60),
-    //         seconds = Math.floor((timer / 1000) % 60);
+    //     const timer = Date.parse(endtime) - Date.parse(new Date()); // orqaga qarab ketayotgan vaqtni ko'rsatadi.
 
+    //     const days = Math.floor(timer / (1000 * 60 * 60 * 24));
+    //     const hours = Math.floor((timer / (1000 * 60 * 60)) % 24);
+    //     const minutes = Math.floor((timer / 1000 / 60) % 60);
+    //     const seconds = Math.floor((timer / 1000) % 60);
 
     //     return { timer, days, hours, minutes, seconds }
-    //     // aslida bu bunay bo'lishi kerak, lekin ES yangi standarti bo'yicha yuqoridagiday bo'ladi.
-    //     // return {
-    //     //     timer: timer,
-    //     //     days: days,
-    //     //     hours: hours,
-    //     //     minutes: minutes,
-    //     //     seconds: seconds
-    //     // }
     // }
 
 
+    // // 2nd part.
     // function setClock(selector, endtime) {
-    //     const timer = document.querySelector(selector),
-    //         days = timer.querySelector('#days'),
-    //         hours = timer.querySelector('#hours'),
-    //         minutes = timer.querySelector('#minutes'),
-    //         seconds = timer.querySelector('#seconds'),
-    //         timeInterval = setInterval(updateClock, 1000);
-
+    //     const timer = document.querySelector(selector);
+    //     const days = timer.querySelector('#days');
+    //     const hours = timer.querySelector('#hours');
+    //     const minutes = timer.querySelector('#minutes');
+    //     const seconds = timer.querySelector('#seconds');
+    //     const timeInterval = setInterval(updateClock, 1000);
 
     //     updateClock();
 
@@ -339,63 +392,285 @@ window.addEventListener('DOMContentLoaded', () => {
     //     }
     // }
 
+
+    // // 3rd part.
     // setClock('.timer', deadline);
 
 
 
     // 1st try.
-    const deadline = '2023-05-20'; // bu 8-dekabr degani
+    // const deadline = '2023-05-20'; // bu 8-dekabr degani
 
-    // // Date.parse nimaligini tushuntirish uchun.
-    // // console.log(Date.parse('2023-12-08')) // 1701993600000
-    // // krch shu narsani millisekundga o'tqazib beradi.
+    // // // Date.parse nimaligini tushuntirish uchun.
+    // // // console.log(Date.parse('2023-12-08')) // 1701993600000
+    // // // krch shu narsani millisekundga o'tqazib beradi.
 
-    // // new Date() ni tushuntirish uchun .
-    // // console.log(new Date()); // Thu Dec 08 2022 17:19:25 GMT+0300 (Moscow Standard Time)
-    // // bera uje yangi ya'ni xozirgi vaqtni ko'rsatadi.
+    // // // new Date() ni tushuntirish uchun .
+    // // // console.log(new Date()); // Thu Dec 08 2022 17:19:25 GMT+0300 (Moscow Standard Time)
+    // // // bera uje yangi ya'ni xozirgi vaqtni ko'rsatadi.
 
 
-    // // anabu endtime esa 2023-yilni 8-dekabridan xozirgi vaqtni ayirobman degani
+    // // // anabu endtime esa 2023-yilni 8-dekabridan xozirgi vaqtni ayirobman degani
 
-    // // qolgan vaqtni aniqlash degani.
+    // // // qolgan vaqtni aniqlash degani.
+    // function getTimeRemaining(endtime) {
+    //     const timer = Date.parse(endtime) - Date.parse(new Date()), // timer - bu oraliq vaqt degani
+    //         days = Math.floor(timer / (1000 * 60 * 60 * 24)), // bu 2023-yildan to shu kungacha necha kun qolganini ko'rsatadi
+    //         hours = Math.floor((timer / (1000 * 60 * 60)) % 24), // bu yerda necha soat qolganini aniqlayobmiz
+    //         minutes = Math.floor((timer / 1000 / 60) % 60), // bu esa minutni aniqlayobmiz
+    //         seconds = Math.floor((timer / 1000) % 60); // sekundni aniqlayobmiz
+
+    //     return { timer, days, hours, minutes, seconds }
+    // }
+
+    // // selector - bu ona div. HTML dagi har bittd spanlarni onasi. Bu universal funksiya.
+    // function setClock(selector, endtime) {
+    //     // endi biza HTML dagi span larni olamiz endi.
+    //     const timer = document.querySelector(selector), // ona divni o'zi bu
+    //         days = timer.querySelector('#days'), //kunlarni
+    //         hours = timer.querySelector('#hours'), // soatlarni
+    //         minutes = timer.querySelector('#minutes'), // minutlarni
+    //         seconds = timer.querySelector('#seconds'), // sekundlarni olobmiz
+    //         timeInterval = setInterval(updateClock, 1000); // har bir sekunnda updateClock ishlaydi
+
+    //     updateClock();
+
+    //     function updateClock() {
+    //         const t = getTimeRemaining(endtime);
+
+    //         days.innerHTML = t.days;
+    //         hours.innerHTML = t.hours;
+    //         minutes.innerHTML = t.minutes;
+    //         seconds.innerHTML = t.seconds;
+
+    //         if (t.timer <= 0) {
+    //             clearInterval(timeInterval);
+    //         }
+    //     }
+    // }
+
+    // setClock('.timer', deadline);
+
+
+
+    // 2nd try.
+    // Timer.
+    // const deadline = '2023-05-20';
+
+    // // I - budilnik.
+    // function getTimeRemaining(endtime) {
+    //     const timer = Date.parse(endtime) - Date.parse(new Date()); // orqaga qarab ketayotgan vaqtni ko'rsatadi. // timer,Date.parse
+
+    //     const days = Math.floor(timer / 86400000); // all. kun,soat,minut,sekund - Math.floor
+    //     const hours = Math.floor((timer / 3600000) % 24);
+    //     const minutes = Math.floor((timer / 16.68) % 60);
+    //     const seconds = Math.floor((timer / 1000) % 60);
+
+    //     return { timer, days, hours, minutes, seconds } // return
+    // }
+
+
+    // // II - grain timer.
+    // function setClock(selector, endtime) {
+    //     const timer = document.querySelector(selector); // all. taymerni roditel qilamiz/ all ni topamiz/ interval o'rnatamiz
+    //     const days = timer.querySelector('#days');
+    //     const hours = timer.querySelector('#hours');
+    //     const minutes = timer.querySelector('#minutes');
+    //     const seconds = timer.querySelector('#seconds');
+    //     const timeInterval = setInterval(updateClock, 1000);
+
+    //     updateClock();
+
+    //     function updateClock() {
+    //         const t = getTimeRemaining(endtime);
+
+    //         days.innerHTML = t.days;
+    //         hours.innerHTML = t.hours;
+    //         minutes.innerHTML = t.minutes;
+    //         seconds.innerHTML = t.seconds;
+
+    //         if (t.timer <= 0) {
+    //             clearInterval(timeInterval);
+    //         }
+    //     }
+    // }
+
+
+    // // III - chaqir hammani.
+    // setClock('.timer', deadline);
+
+
+
+    // 3rd try.
+    // const deadline = '2023-05-20';
+
+    // function getTimeRemaining(endtime) {
+    //     const timer = Date.parse(endtime) - Date.parse(new Date());
+
+    //     const days = Math.floor(timer / 86400000);
+    //     const hours = Math.floor((timer / 3600000) % 24);
+    //     const minutes = Math.floor((timer / 16.68) % 60);
+    //     const seconds = Math.floor((timer / 1000) % 60);
+
+    //     return { timer, days, hours, minutes, seconds };
+    // }
+
+
+    // function setClock(selector, endtime) {
+    //     const timer = document.querySelector(selector);
+
+    //     const days = timer.querySelector('#days');
+    //     const hours = timer.querySelector('#hours');
+    //     const minutes = timer.querySelector('#minutes');
+    //     const seconds = timer.querySelector('#seconds');
+    //     const timeInterval = setInterval(updateClock, 1000);
+
+    //     updateClock();
+
+    //     function updateClock() {
+    //         const t = getTimeRemaining(endtime);
+
+    //         days.innerHTML = t.days;
+    //         hours.innerHTML = t.hours;
+    //         minutes.innerHTML = t.minutes;
+    //         seconds.innerHTML = t.seconds;
+
+    //         if (t.timer <= 0) {
+    //             clearInterval(timeInterval);
+    //         }
+    //     }
+    // }
+
+    // setClock('.timer', deadline);
+
+
+
+    // 4th try.
+    // const deadline = '2022-12-31'; // new year
+
+    // function getTimeRemaining(endtime) {
+    //     const timer = Date.parse(endtime) - Date.parse(new Date());
+
+    //     const days = Math.floor(timer / 86400000);
+    //     const hours = Math.floor((timer / 3600000) % 24);
+    //     const minutes = Math.floor((timer / 16.68) % 24);
+    //     const seconds = Math.floor((timer / 1000) % 24);
+
+    //     return { timer, days, hours, minutes, seconds };
+    // }
+
+
+
+    // function setClock(selector, endtime) {
+    //     const timer = document.querySelector(selector);
+
+    //     const days = timer.querySelector('#days');
+    //     const hours = timer.querySelector('#hours');
+    //     const minutes = timer.querySelector('#minutes');
+    //     const seconds = timer.querySelector('#seconds');
+    //     const timeInterval = setInterval(updateClock, 1000);
+
+    //     updateClock();
+
+    //     function updateClock() {
+    //         const t = getTimeRemaining(endtime);
+
+    //         days.innerHTML = t.days;
+    //         hours.innerHTML = t.hours;
+    //         minutes.innerHTML = t.minutes;
+    //         seconds.innerHTML = t.seconds;
+
+    //         if (t.timer <= 0) {
+    //             clearInterval(timeInterval);
+    //         }
+    //     }
+    // }
+
+    // setClock('.timer', deadline);
+
+
+    // // 5th try.
+    // const deadline = '2023-05-02';
+
+    // function getTimeRemaining(endtime) {
+    //     const timer = Date.parse(endtime) - Date.parse(new Date());
+
+    //     const days = Math.floor(timer / 86400000);
+    //     const hours = Math.floor((timer / 3600000) % 24);
+    //     const minutes = Math.floor((timer / 16.68) % 60);
+    //     const seconds = Math.floor((timer / 1000) % 60);
+
+    //     return { timer, days, hours, minutes, seconds };
+    // }
+
+    // function setClock(selector, endtime) {
+    //     const timer = document.querySelector(selector);
+
+    //     const days = timer.querySelector('#days');
+    //     const hours = timer.querySelector('#hours');
+    //     const minutes = timer.querySelector('#minutes');
+    //     const seconds = timer.querySelector('#seconds');
+    //     const timeInterval = setInterval(updateClock, 1000);
+
+    //     updateClock();
+
+    //     function updateClock() {
+    //         const t = getTimeRemaining(endtime);
+
+    //         days.innerHTML = t.days;
+    //         hours.innerHTML = t.hours;
+    //         minutes.innerHTML = t.minutes;
+    //         seconds.innerHTML = t.seconds;
+
+    //         if (t.timer <= 0) {
+    //             clearInterval(timeInterval);
+    //         }
+    //     }
+    // }
+
+
+    // setClock('.timer', deadline);
+
+    // my try:
+    const deadline = '2024-12-31';
+
     function getTimeRemaining(endtime) {
-        const timer = Date.parse(endtime) - Date.parse(new Date()), // timer - bu oraliq vaqt degani
-            days = Math.floor(timer / (1000 * 60 * 60 * 24)), // bu 2023-yildan to shu kungacha necha kun qolganini ko'rsatadi
-            hours = Math.floor((timer / (1000 * 60 * 60)) % 24), // bu yerda necha soat qolganini aniqlayobmiz
-            minutes = Math.floor((timer / 1000 / 60) % 60), // bu esa minutni aniqlayobmiz
-            seconds = Math.floor((timer / 1000) % 60); // sekundni aniqlayobmiz
+        const timer = Date.parse(endtime) - Date.parse(new Date());
+        const days = Math.floor(endtime / 36400000);
+        const hours = Math.floor((endtime / 3600000) % 24);
+        const minutes = Math.floor((endtime / 16.68) % 60);
+        const seconds = Math.floor((endtime / 1000) % 60);
 
-        return { timer, days, hours, minutes, seconds }
+        return { timer, days, hours, minutes, seconds };
     }
 
 
-    // selector - bu ona div. HTML dagi har bittd spanlarni onasi. Bu universal funksiya.
     function setClock(selector, endtime) {
-        // endi biza HTML dagi span larni olamiz endi.
-        const timer = document.querySelector(selector), // ona divni o'zi bu
-            days = timer.querySelector('#days'), //kunlarni
-            hours = timer.querySelector('#hours'), // soatlarni
-            minutes = timer.querySelector('#minutes'), // minutlarni
-            seconds = timer.querySelector('#seconds'), // sekundlarni olobmiz
-            timeInterval = setInterval(updateClock, 1000); // har bir sekunnda updateClock ishlaydi
+        const timer = document.querySelector(selector);
+        const days = timer.querySelector('#days');
+        const hours = timer.querySelector('#hours');
+        const minutes = timer.querySelector('#minutes');
+        const seconds = timer.querySelector('#seconds');
+        const timeInterval = setInterval(updateClock, 1000);
 
         updateClock();
 
         function updateClock() {
             const t = getTimeRemaining(endtime);
-
             days.innerHTML = t.days;
             hours.innerHTML = t.hours;
             minutes.innerHTML = t.minutes;
             seconds.innerHTML = t.seconds;
 
-            if (t.timer <= 0) {
+            if (t <= 0) {
                 clearInterval(timeInterval);
             }
         }
     }
 
     setClock('.timer', deadline);
+
+
 
 
 
@@ -806,6 +1081,186 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // 51-dars. Loyiha. Rest operator.
+
+
+
+    // class MenuCard {
+    //     constructor(src, alt, title, descr, price, parentSelector, ...classes) {
+    //         this.src = src;
+    //         this.alt = alt;
+    //         this.title = title;
+    //         this.descr = descr;
+    //         this.price = price;
+    //         this.classes = classes;
+    //         this.parent = document.querySelector(parentSelector);
+    //         this.som = 11303;
+    //         this.transfer();
+    //     }
+
+    //     transfer() {
+    //         this.price = this.price * this.som;
+    //     }
+
+    //     pass() {
+    //         const element = document.createElement('div');
+
+    //         if (this.classes.length === 0) {
+    //             this.element = 'menu__item';
+    //             element.classList.add(this.element);
+    //         } else {
+    //             this.classes.forEach((classname) => {
+    //                 element.classList.add(classname);
+    //             });
+    //         }
+
+    //         this.classes.forEach((classname) => {
+    //             element.classList.add(classname);
+    //         });
+
+
+    //         element.innerHTML = `
+    //             <img src=${this.src} alt=${this.alt} />
+    //             <h3 class="menu__item-subtitle">${this.title}</h3>
+    //             <div class="menu__item-descr">
+    //                 ${this.descr}
+    //             </div>
+    //             <div class="menu__item-divider"></div>
+    //             <div class="menu__item-price">
+    //                 <div class="menu__item-cost">Price:</div>
+    //                 <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
+    //             </div>                
+    //         `;
+
+    //         this.parent.append(element);
+    //     }
+    // }
+
+
+    // new MenuCard(
+    //     "img/tabs/1.png",
+    //     "vegy",
+    //     `Plan "Usual"`,
+    //     `
+    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+    //     `,
+    //     10,
+    //     `.menu .container`,
+    //     'menu__item'
+    // ).pass();
+
+    // new MenuCard(
+    //     "img/tabs/2.jpg",
+    //     "elite",
+    //     `Plan "Premium"`,
+    //     `
+    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+    //     `,
+    //     15,
+    //     `.menu .container`,
+    //     'menu__item'
+    // ).pass();
+
+    // new MenuCard(
+    //     "img/tabs/3.jpg",
+    //     "post",
+    //     `Plan "VIP"`,
+    //     `
+    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+    //     `,
+    //     20,
+    //     `.menu .container`,
+    //     'menu__item'
+    // ).pass();
+
+
+    // try.
+    // class MenuCard {
+    //     constructor(src, alt, title, descr, price, parentSelector, ...classes) {
+    //         this.src = src;
+    //         this.alt = alt;
+    //         this.title = title;
+    //         this.descr = descr;
+    //         this.price = price;
+    //         this.classes = classes;
+    //         this.parent = document.querySelector(parentSelector);
+    //         this.som = 11500;
+    //         this.transfer();
+    //     }
+
+    //     transfer() {
+    //         this.price = this.price * this.som;
+    //     }
+
+    //     pass() {
+    //         const element = document.createElement('div');
+
+    //         if (this.classes.length === 0) {
+    //             this.element = 'menu__item';
+    //             element.classList.add(this.element);
+    //         } else {
+    //             this.classes.forEach((classname) => {
+    //                 element.classList.add(classname);
+    //             });
+    //         }
+
+    //         this.classes.forEach((classname) => {
+    //             element.classList.add(classname);
+    //         });
+
+    //         element.innerHTML = `
+    //             <img src=${this.src} alt=${this.alt} />
+    //             <h3 class="menu__item-subtitle">${this.title}</h3>
+    //             <div class="menu__item-descr">${this.descr}</div>
+    //             <div class="menu__item-divider"></div>
+    //             <div class="menu__item-price">
+    //                 <div class="menu__item-cost">Price:</div>
+    //                 <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
+    //             </div>  
+    //         `;
+
+    //         this.parent.append(element);
+    //     }
+    // }
+
+
+    // new MenuCard(
+    //     `img/tabs/1.png`,
+    //     `vegy`,
+    //     `Plan "Usual"`,
+    //     `
+    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+    //     `,
+    //     10,
+    //     `.menu .container`,
+    //     'menu__item'
+    // ).pass();
+
+    // new MenuCard(
+    //     "img/tabs/2.jpg",
+    //     "elite",
+    //     `Plan "Premium"`,
+    //     `
+    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+    //     `,
+    //     15,
+    //     `.menu .container`,
+    //     'menu__item'
+    // ).pass();
+
+    // new MenuCard(
+    //     "img/tabs/3.jpg",
+    //     "post",
+    //     `Plan "VIP"`,
+    //     `
+    //     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
+    //     `,
+    //     20,
+    //     `.menu .container`,
+    //     'menu__item'
+    // ).pass();
+
+
+    // try.
     class MenuCard {
         constructor(src, alt, title, descr, price, parentSelector, ...classes) {
             this.src = src;
@@ -815,7 +1270,7 @@ window.addEventListener('DOMContentLoaded', () => {
             this.price = price;
             this.classes = classes;
             this.parent = document.querySelector(parentSelector);
-            this.som = 11303;
+            this.som = 11500;
             this.transfer();
         }
 
@@ -831,26 +1286,23 @@ window.addEventListener('DOMContentLoaded', () => {
                 element.classList.add(this.element);
             } else {
                 this.classes.forEach((classname) => {
-                    element.classList.add(classname);
+                    classname.classList.add(classname);
                 });
             }
 
             this.classes.forEach((classname) => {
-                element.classList.add(classname);
+                classname.classList.add(classname);
             });
 
-
             element.innerHTML = `
-                <img src=${this.src} alt=${this.alt} />
+                <img src="${this.src}" alt="${this.alt}" />
                 <h3 class="menu__item-subtitle">${this.title}</h3>
-                <div class="menu__item-descr">
-                    ${this.descr}
-                </div>
+                <div class="menu__item-descr">${this.descr}</div>
                 <div class="menu__item-divider"></div>
                 <div class="menu__item-price">
                     <div class="menu__item-cost">Price:</div>
-                    <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
-                </div>                
+                    <div class="menu__item-total"><span>${this.price}</span> month</div>
+                </div>
             `;
 
             this.parent.append(element);
@@ -859,8 +1311,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     new MenuCard(
-        "img/tabs/1.png",
-        "vegy",
+        `img/tabs/1.png`,
+        `vegy`,
         `Plan "Usual"`,
         `
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.
@@ -898,6 +1350,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
     // 56-dars. Loyiha Ma'lumotlarni yuborish.
     // FORM.
     // const forms = document.querySelectorAll('form');
@@ -911,6 +1364,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //     succes: `Thanks for submitting our form`,
     //     failure: `Somethign went wrong`
     // }
+
 
     // function postData(form) {
     //     form.addEventListener('submit', (e) => {
@@ -1007,10 +1461,10 @@ window.addEventListener('DOMContentLoaded', () => {
             })
             .catch(() => {
                 showThanksModal(msg.failure);
-            }).finally(() => {
+            })
+            .finally(() => {
                 form.reset();
             });
-
     }
 
 
@@ -1027,11 +1481,11 @@ window.addEventListener('DOMContentLoaded', () => {
         const thanksModal = document.createElement('div');
         thanksModal.classList.add('modal__dialog');
         thanksModal.innerHTML = `
-        <div class="modal__content">
+            <div class="modal__content">
                 <div data-close class="modal__close">&times;</div>
                 <div class="modal__title">${message}</div>
-        </div>
-        `
+            </div>    
+        `;
 
         document.querySelector('.modal').append(thanksModal);
         setTimeout(() => {
@@ -1049,6 +1503,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // 60-dars. Loyiha. Fetch API.
     // bu aslida XAMMP ni zamena qilib turuvchisi
     // Fetch API - XMLHttpRequest dan ko'ra ancha qulayroq.
+
     fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
@@ -1062,25 +1517,30 @@ window.addEventListener('DOMContentLoaded', () => {
     // output:
     // { name: 'aziz', id: 101 }
 
+    // mytry.
+    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ name: 'aziz' })
+    //     })
+    //     .then(response => response.json())
+    //     .then(json => console.log(json));
+
+    // mytry.
+    // fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ name: 'aziz' })
+    //     })
+    //     .then(response => response.json())
+    //     .then(json => console.log(json));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // 61-dars. Map, filter, reduce.
 
 });
