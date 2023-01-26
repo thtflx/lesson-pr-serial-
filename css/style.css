@@ -23,7 +23,7 @@ a {
 .header {
     width: 100%;
     height: 100vh;
-    background: url("../img/header.jpg") center no-repeat;
+    background: url('../img/header.jpg') center no-repeat;
     background-size: cover;
     position: relative;
 }
@@ -46,7 +46,7 @@ a {
 
 .button {
     display: inline-block;
-    font-family: "Montserrat", Helvetica, sans-serif;
+    font-family: 'Montserrat', Helvetica, sans-serif;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     position: relative;
@@ -97,7 +97,7 @@ a {
 /* Entity Icon   */
 
 .arrow:after {
-    content: "\2794";
+    content: '\2794';
 }
 
 
@@ -128,7 +128,7 @@ a {
 /* Entity Icon   */
 
 .phone:after {
-    content: "\260E";
+    content: '\260E';
 }
 
 
@@ -359,7 +359,7 @@ a {
 .menu__item {
     width: 320px;
     min-height: 450px;
-    background: url("../img/header.jpg");
+    background: url('../img/header.jpg');
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
     font-size: 16px;
     font-weight: 300;
@@ -596,7 +596,7 @@ a {
 }
 
 .loader {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     position: fixed;
@@ -632,7 +632,7 @@ section {
 }
 
 .paper_man .part::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
@@ -932,17 +932,6 @@ section {
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
-}
-
-
-/* for loader */
-
-.opacity {
-    opacity: 0;
-}
-
-.display {
-    display: none;
 }
 
 @keyframes fade {
