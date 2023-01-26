@@ -1,3 +1,1 @@
-#test.
-#test2.
-
+study-project from lesson.
