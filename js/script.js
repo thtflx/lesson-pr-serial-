@@ -215,36 +215,39 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     //!65 end. 
 
+    //! 66 start. 
+
+    //! 66 end. 
 
 
-    new MenuCard(
-        'img/tabs/1.png',
-        'usual',
-        'Plan "Usual"',
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
-        10,
-        '.menu .container'
-    ).render()
+    // new MenuCard(
+    //     'img/tabs/1.png',
+    //     'usual',
+    //     'Plan "Usual"',
+    //     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+    //     10,
+    //     '.menu .container'
+    // ).render()
 
-    new MenuCard(
-            'img/tabs/2.jpg',
-            'plan',
-            'Plan “Premium”',
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
-            20,
-            '.menu .container',
-            'menu__item'
-        ).render() >>>
+    // new MenuCard(
+    //         'img/tabs/2.jpg',
+    //         'plan',
+    //         'Plan “Premium”',
+    //         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+    //         20,
+    //         '.menu .container',
+    //         'menu__item'
+    //     ).render() >>>
 
-        new MenuCard(
-            'img/tabs/3.jpg',
-            'vip',
-            'Plan VIP',
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
-            30,
-            '.menu .container',
-            'menu__item'
-        ).render()
+    //     new MenuCard(
+    //         'img/tabs/3.jpg',
+    //         'vip',
+    //         'Plan VIP',
+    //         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+    //         30,
+    //         '.menu .container',
+    //         'menu__item'
+    //     ).render()
 
 
 
@@ -366,3 +369,12 @@ window.addEventListener('DOMContentLoaded', () => {
 // toDo1. Deylik, bizada 100 ta menuCard lar bor, va menejerimiz uni narxlarini o'zgartirib turishi kerak.
 // toDo1. U JS codega kirib, bitta-bitta o'zgartirolmaydi, unga data-base json'imiz xizmat qiladi 
 // todo1. va biz xozir o'sha masala ustida ishlaymiz!
+
+
+
+
+// ! 66-dars. Loyiha. AXIOS.
+// todo2. Xozircha, CDN orqali axiosni kompimizga ulayobmiz.
+// todo2.
+// todo2.
+// todo2.
