@@ -1,14 +1,10 @@
 {
-    "name": "lesson-pr-serial-",
+    "name": "serial",
     "version": "1.0.0",
-    "description": "",
+    "description": "JavaScript from 0 to hero",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/thtflx/lesson-pr-serial-.git"
     },
     "keywords": [
         "js",
@@ -17,13 +13,9 @@
         "serialize",
         "serialize-html"
     ],
-    "author": "thtflx",
+    "author": "Samar Badriddinov",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/thtflx/lesson-pr-serial-/issues"
-    },
-    "homepage": "https://github.com/thtflx/lesson-pr-serial-#readme",
-    "dependencies": {
-        "json-server": "^0.17.1"
+    "devDependencies": {
+        "json-server": "^0.17.0"
     }
 }
