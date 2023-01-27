@@ -192,7 +192,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-<<<<<<< HEAD
+    <<
+    << << < HEAD
     //!65 start. 
     async function getRecource(url) {
         const res = await fetch(url);
@@ -214,7 +215,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     });
     //!65 end. 
-=======
+    ===
+    === =
     new MenuCard(
         'img/tabs/1.png',
         'usual',
@@ -225,15 +227,15 @@ window.addEventListener('DOMContentLoaded', () => {
     ).render()
 
     new MenuCard(
-        'img/tabs/2.jpg',
-        'plan',
-        'Plan “Premium”',
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
-        20,
-        '.menu .container',
-        'menu__item'
-    ).render()
->>>>>>> 0e7ce7d087918792b256ce5516bbbe0517d80088
+            'img/tabs/2.jpg',
+            'plan',
+            'Plan “Premium”',
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+            20,
+            '.menu .container',
+            'menu__item'
+        ).render() >>>
+        >>> > 0e7 ce7d087918792b256ce5516bbbe0517d80088
 
     new MenuCard(
         'img/tabs/3.jpg',
@@ -245,7 +247,8 @@ window.addEventListener('DOMContentLoaded', () => {
         'menu__item'
     ).render()
 
-<<<<<<< HEAD
+    <<
+    << << < HEAD
 
 
     // new MenuCard(
@@ -277,9 +280,10 @@ window.addEventListener('DOMContentLoaded', () => {
     //     'menu__item'
     // ).render()
 
-=======
->>>>>>> 0e7ce7d087918792b256ce5516bbbe0517d80088
-    // Form
+        ===
+        === = >>>
+        >>> > 0e7 ce7d087918792b256ce5516bbbe0517d80088
+        // Form
     const forms = document.querySelectorAll('form')
 
     forms.forEach((form) => {
@@ -358,9 +362,7 @@ window.addEventListener('DOMContentLoaded', () => {
             closeModal()
         }, 4000)
     }
-<<<<<<< HEAD
 })
-
 
 
 
@@ -370,6 +372,3 @@ window.addEventListener('DOMContentLoaded', () => {
 // toDo1. Deylik, bizada 100 ta menuCard lar bor, va menejerimiz uni narxlarini o'zgartirib turishi kerak.
 // toDo1. U JS codega kirib, bitta-bitta o'zgartirolmaydi, unga data-base json'imiz xizmat qiladi 
 // todo1. va biz xozir o'sha masala ustida ishlaymiz!
-=======
-})
->>>>>>> 0e7ce7d087918792b256ce5516bbbe0517d80088
