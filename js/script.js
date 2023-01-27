@@ -192,8 +192,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    <<
-    << << < HEAD
+
     //!65 start. 
     async function getRecource(url) {
         const res = await fetch(url);
@@ -215,8 +214,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     });
     //!65 end. 
-    ===
-    === =
+
+
+
     new MenuCard(
         'img/tabs/1.png',
         'usual',
@@ -235,20 +235,17 @@ window.addEventListener('DOMContentLoaded', () => {
             '.menu .container',
             'menu__item'
         ).render() >>>
-        >>> > 0e7 ce7d087918792b256ce5516bbbe0517d80088
 
-    new MenuCard(
-        'img/tabs/3.jpg',
-        'vip',
-        'Plan VIP',
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
-        30,
-        '.menu .container',
-        'menu__item'
-    ).render()
+        new MenuCard(
+            'img/tabs/3.jpg',
+            'vip',
+            'Plan VIP',
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditatebeatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+            30,
+            '.menu .container',
+            'menu__item'
+        ).render()
 
-    <<
-    << << < HEAD
 
 
     // new MenuCard(
@@ -280,10 +277,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //     'menu__item'
     // ).render()
 
-        ===
-        === = >>>
-        >>> > 0e7 ce7d087918792b256ce5516bbbe0517d80088
-        // Form
+    // Form
     const forms = document.querySelectorAll('form')
 
     forms.forEach((form) => {
